@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { useState } from "react";
 import { Statistics } from '../Statistics/Statistics';
 import { Notification } from '../Notification/Notification';
 import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
@@ -7,12 +7,10 @@ import { Container } from './App.styled';
 
 
 
-export  class App extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0
-  }
+export default function App() {
+  const[good, setGood] = useState(0);
+  const[neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
 
   handleFeedback = event => {
     const score = event.target.name;
